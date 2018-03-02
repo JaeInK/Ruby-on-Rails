@@ -1,0 +1,15 @@
+<h1>List</h1>
+<a href='home/new'>new</a>
+
+<br><br>
+
+<%@posts.each do |p|%>
+    title: <%=p.title%>
+    content: <%=p.content%>
+    <a href="/home/destroy/<%=p.id%>">Delete1</a>
+    <%=link_to post_destroy_path(post_id: p.id) do%>
+        <button>Delete2</button>
+    <%end%>
+    <a href='/home/edit/<%=p.id%>'>Update</a>
+    <br><br>
+<%end%>
